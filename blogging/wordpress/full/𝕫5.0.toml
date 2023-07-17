@@ -1,0 +1,33 @@
+name = "WordPress"
+description = "Create a place for your business, your interests, or anything else—with the open source platform that powers the web."
+docs = "https://zeabur.com/docs/marketplace/wordpress"
+
+[prebuilt]
+image = "wordpress:5"
+command = "command args..."
+
+[http_service]
+internal_port = "3000"
+
+[env]
+SITE_NAME = ""
+ADMIN_USERNAME = ""
+ADMIN_PASSWORD = ""
+
+# default value
+LOCALE = "zh_TW"
+
+[volumes.wp-content]
+dir = "/var/www/html/wp-content"
+size = "256M"
+
+[volumes.wp-config]
+dir = "/var/www/html/wp-config.php"
+write = false
+
+[volumes.php-config]
+dir = "/etc/apache2/php.ini"
+
+[volumes.tmp]
+dir = "/tmp"
+public = false

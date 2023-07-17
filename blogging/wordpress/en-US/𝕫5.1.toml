@@ -1,0 +1,12 @@
+"$base" = "github:pan93412/musical-carnival/official/wordpress/full𝕫5.1"
+name = "WordPress (with only en-US)"
+
+[[prebuilt.patches]]
+type = "shell"
+command = """
+#!/usr/bin/env bash
+
+cp -rv /var/www/html/wp-content/languages/en_US /tmp/en_US
+rm -rf /var/www/html/wp-content/languages/*
+cp -rv /tmp/en_US /var/www/html/wp-content/languages/en_US
+"""

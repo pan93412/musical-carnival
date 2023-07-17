@@ -1,0 +1,16 @@
+"$base" = "github:pan93412/musical-carnival/official/wordpress/full𝕫5.0"
+
+[volumes.wp-content]
+dir = "/var/www/html/wp-content"
+size = "1024M"
+
+[volumes.wp-config]
+dir = "/var/www/html/wp-config.php"
+write = false
+
+[volumes.php-config]
+dir = "/etc/apache2/php.ini"
+
+[volumes.tmp]
+dir = "/tmp"
+public = false
